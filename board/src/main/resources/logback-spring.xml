@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    
+    <!-- Console Appender -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+				%d %5p [%c] %m%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <appender name="console-infolog" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 출력패턴 -->
+        <encoder>
+            <pattern>%d %5p %m%n</pattern>
+        </encoder>
+       
+    </appender>
+ 
+ 
+    <logger name="board" level="DEBUG" appender-ref="console"/>
+	<logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog"/>
+	<logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog"/>
+	
+    <root level="off"> <!-- DEBUG -->
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
+
