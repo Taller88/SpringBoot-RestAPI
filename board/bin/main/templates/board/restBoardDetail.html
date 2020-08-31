@@ -43,14 +43,9 @@
 			</table>
 			<input type="hidden" id="boardIdx" name="boardIdx" th:value="${board.boardIdx }">
 			<!-- 여기 -->
-			<input type="hidden" id="method" name="_method"/>
+			<input type="hidden" id="method" name="_method" />
 		</form>
-		
-		<div class="file_list">
-			<!-- 여기 -->
-			<a th:each="list : ${board.fileList}" th:href="@{/board/file(idx=${list.idx}, boardIdx=${list.boardIdx})}" th:text="|${list.originalFileName} (${list.fileSize} kb)|"></a>
-		</div>
-		
+			
 		<a href="#this" id="list" class="btn">목록으로</a>
 		<a href="#this" id="edit" class="btn">수정하기</a>
 		<a href="#this" id="delete" class="btn">삭제하기</a>
@@ -69,18 +64,20 @@
 			
 			$("#edit").on("click", function(){
 				/* 여기 */
+				var frm = $("#frm")[0];
+				
 				$("#method").val("put");
 				
-				var frm = $("#frm")[0];
 				frm.action = "/board/"+boardIdx;
 				frm.submit();
 			});
 			
 			$("#delete").on("click", function(){
 				/* 여기 */
+				var frm = $("#frm")[0];
+				
 				$("#method").val("delete");
 				
-				var frm = $("#frm")[0];
 				frm.action = "/board/"+boardIdx;
 				frm.submit();
 			});

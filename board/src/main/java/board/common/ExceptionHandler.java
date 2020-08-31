@@ -12,6 +12,7 @@ public class ExceptionHandler {
 
 	private Logger log=LoggerFactory.getLogger(this.getClass());
 	
+	@org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
 	public ModelAndView defaultExceptionHandler(HttpServletRequest request, Exception exception) {
 		ModelAndView mv=new ModelAndView("/error/error_default");
 		mv.addObject("exception", exception);
