@@ -1,11 +1,16 @@
 package board.board.service;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import board.board.dto.BoardDto;
+import board.board.dto.CompanyDto;
 import board.board.mapper.BoardMapper;
 
 @Service
@@ -55,5 +60,9 @@ public class BoardServiceImpl implements BoardService {
 	public void deleteBoard(int boardIdx) {
 		boardMapper.deleteBoard(boardIdx);
 	}
+
+
+
+
 
 }

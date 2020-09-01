@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.board.dto.BoardDto;
+import board.board.dto.CompanyDto;
 import board.board.service.BoardService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -54,6 +55,8 @@ public class RestBoardApiController {
 		boardService.deleteBoard(boardIdx);
 		return "redirect:/board";
 	}
+	
+	
 	
 	
 }

@@ -3,6 +3,7 @@ package board.board.service;
 import java.util.List;
 
 import board.board.dto.BoardDto;
+import board.board.dto.CompanyDto;
 
 public interface BoardService {
 
@@ -15,4 +16,7 @@ public interface BoardService {
 	void updateBoard(BoardDto board);
 
 	void deleteBoard(int boardIdx);
+
+	
+	
 }
