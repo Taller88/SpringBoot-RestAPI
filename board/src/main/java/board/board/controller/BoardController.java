@@ -2,6 +2,8 @@ package board.board.controller;
 
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +69,11 @@ public class BoardController {
 		log.debug("deleteBoard");
 		
 		return "redirect:/board/openBoardList.do";
+	}
+	
+	@RequestMapping("/data/crawling.do")
+	public void crawlingDate() throws Exception{
+		log.debug("정진우");
+		
 	}
 }
